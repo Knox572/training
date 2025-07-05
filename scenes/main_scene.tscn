@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bksfn8i6wgawg"]
+[gd_scene load_steps=9 format=3 uid="uid://bksfn8i6wgawg"]
 
 [ext_resource type="PackedScene" uid="uid://bchlk3y11ui6g" path="res://scenes/components/day_and_night_cycle_component.tscn" id="1_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://c6q41esllqxmn" path="res://scenes/components/mouse_cursor_component.tscn" id="1_rt2n2"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dom606bwp3aqg" path="res://scenes/levels/level_1.tscn" id="2_gubc5"]
 [ext_resource type="PackedScene" uid="uid://dj0rpc6se7euk" path="res://scenes/character/player/player.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://7iod0ymihmk3" path="res://scenes/ui/game_screen.tscn" id="4_c16ls"]
+[ext_resource type="PackedScene" uid="uid://b0im1vbr6788u" path="res://scenes/objects/plants/tomato_harvest.tscn" id="6_18nlu"]
+[ext_resource type="PackedScene" uid="uid://cg6gk1ke5jiem" path="res://scenes/objects/plants/corn_harvest.tscn" id="7_c1pb6"]
 
 [node name="MainScene" type="Node"]
 
@@ -26,9 +28,14 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_gubc5")]
 
 [node name="Player" parent="GameRoot" instance=ExtResource("3_rt2n2")]
-y_sort_enabled = true
-position = Vector2(212, 286)
+position = Vector2(223, 298)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
+
+[node name="TomatoHarvest" parent="GameRoot" instance=ExtResource("6_18nlu")]
+position = Vector2(190, 257)
+
+[node name="CornHarvest" parent="GameRoot" instance=ExtResource("7_c1pb6")]
+position = Vector2(188, 284)
 
 [node name="GameScreen" parent="." instance=ExtResource("4_c16ls")]
